@@ -1,0 +1,402 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.75;
+	font-family: $default-font;
+	overflow-x: hidden;
+	opacity: 1;
+	min-width: 1200px;
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.wrapper
+	margin: 0 auto;
+	max-width: 1440px;
+	position: relative;
+	@media screen and (max-width: 1440px)
+		margin: 0 15px;
+
+h1
+	font-size: 50px;
+	margin: 0;
+	font-weight: 900;
+p
+	font-size: $default-font-size;
+
+.header
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	padding-top: 46px;
+	width: 100%;
+	z-index: 1;
+
+	.wrapper
+		@include flexbox();
+
+.main-menu
+	margin: 0 0 0 auto;
+	ul
+		li
+			display: inline-block;
+			margin-left: 38px;
+			a
+				color: $white;
+				text-transform: uppercase;
+				text-decoration: none;
+				font-size: 15px;
+				font-weight: 100;
+				transition: all .5s;
+				&:hover
+					color: $green;
+
+.intro
+	background-color: $gray;
+	min-height: 793px;
+	position: relative;
+	&:after
+		content: url('../img/intro-decoration.png');
+		position: absolute;
+		bottom: 0;
+		left: 90px;
+
+.countdown
+	@include border-radius(20px);
+	@include flexbox();
+	@include justify-content();
+	border: 2px solid $green;
+	position: absolute;
+	padding: 10px 79px;
+	top: 41%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 970px;
+
+	.ds-element
+		display: inline-block;
+		position: relative;
+		color: $white;
+		+ .ds-element:before
+			content: ":";
+			position: absolute;
+			right: 170px;
+			font-size: 130px;
+			top: -60px;
+
+	.ds-element-value
+		font-size: 130px;
+		font-weight: 100;
+		margin-top: -50px;
+		margin-bottom: -5px;
+
+	.ds-element-title
+		font-size: 25px;
+		text-transform: uppercase;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+
+.incline
+	position: relative;
+	z-index: 1;
+	&:before
+		top: 0;
+		-webkit-transform: skewY(-5deg);
+		-ms-transform: skewY(-5deg);
+		transform: skewY(-5deg);
+		-webkit-transform-origin: 0 0;
+		-ms-transform-origin: 0 0;
+		transform-origin: 0 0;
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		right: 0;
+		background-color: inherit;
+		z-index: -1;
+
+.welcome
+	padding: 10px 0 258px;
+	background-color: $white;
+	p
+		line-height: 1.3;
+		margin-top: 0;
+
+.welcome-text
+	width: 50%;
+
+.form
+	@include box-shadow(0px, 1px, 2px, 0px rgba(35, 31, 32, 0.65));
+	background-color: $white;
+	position: absolute;
+	right: 0;
+	top: -263px;
+	padding: 27px 31px 10px 28px;
+	input
+		@include border-radius(5px);
+		border: 1px solid #bebebe;
+		display: block;
+		width: 371px;
+		height: 53px;
+		margin-bottom: 21px;
+		font-size: 19px;
+		padding-left: 15px;
+		&:focus
+			outline: none;
+			border-color: $green;
+	button
+		@include border-radius(5px);
+		border: none;
+		width: 371px;
+		height: 57px;
+		background-color: $green;
+		color: $white;
+		font-size: 22px;
+		font-weight: 700;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		cursor: pointer;
+		transition: all 1s;
+		&:hover
+			background-color: darken($green, 10%);
+
+	.meta
+		text-align: center;
+		color:  #6c6c6c;
+		font-weight: 300;
+		font-size: 15px;
+		line-height: 1;
+
+.button
+	@include border-radius(15px);
+	display: inline-block;
+	color: $white;
+	font-size: 18px;
+	width: 200px;
+	height: 55px;
+	line-height: 55px;
+	text-decoration: none;
+	text-align: center;
+	transition: all 1s;
+	&.green
+		background-color: $green;
+		&:hover
+			background-color: darken($green, 10%);
+	&.black
+		background-color: #373737;
+
+.form-caption
+	color:  #252525;
+	font-size: 30px;
+	font-weight: 700;
+	text-align: center;
+	margin: 0 0 18px;
+
+.advantages
+	@include flexbox();
+	@include justify-content();
+	margin: 140px 0 80px;
+	text-align: center;
+	&-item
+		width: 29%;
+		color: #242424;
+		img
+			margin-bottom: 14px;
+			height: 204px;
+		.advantages-caption
+			font-size: 35px;
+			font-weight: 900;
+			margin-bottom: 7px;
+
+.time
+	table
+		@include border-radius(15px);
+		border-collapse: collapse;
+		cellspacing: 0;
+		width: 100%;
+		color: $white;
+		th
+			background-color: $green;
+			font-size: 30px;
+			&:first-child
+				@include border-radius(15px 0 0);
+			&:last-child
+				text-align: left;
+				@include border-radius(0 15px 0 0);
+		td
+			font-size: 22px;
+			font-weight: 400;
+			vertical-align: middle;
+			object
+				margin-right: 15px;
+				margin-top: 12px;
+		tr
+			height: 75px;
+			&:nth-child(2n)
+				background-color: #373737;
+			&:nth-child(2n+1):not(:first-child)
+				background-color: #4b4d4f;
+			&:last-child
+				td:first-child
+					@include border-radius(0 0 0 15px);
+				td:last-child
+					@include border-radius(0 0 15px 0);
+			td:first-child
+				text-align: center;
+
+	p
+		margin: 40px auto;
+		max-width: 89%;
+		text-align: center;
+
+.reward
+	background-color: $gray;
+	color: $white;
+	text-align: right;
+	padding: 8px 0 198px;
+	.wrapper:after
+		content: url(../img/elite-badge.png);
+		top: -226px;
+		position: absolute;
+		z-index: 1;
+		left: -4px;
+	h1
+		margin-bottom: -5px;
+	&-text
+		max-width: 65%;
+		margin: 0 0 0 auto;
+		line-height: 1.3;
+		.button
+			margin-top: 18px;
+
+.speakers
+	background-color: $white;
+	padding: 100px 0;
+	.wrapper
+		padding: 0 30px;
+		max-width: 1030px;
+		@media screen and (max-width: 1440px)
+			margin: 0 auto;
+	.speakers-description
+		color: #242424;
+		line-height: 1.3;
+		max-width: 60%;
+		margin-bottom: 58px;
+		margin-top: 8px;
+	&-list
+		@include flexbox();
+		@include flex-wrap(wrap);
+		@include justify-content();
+	.speaker
+		@include border-radius(15px);
+		width: 296px;
+		height: 296px;
+		background-color: $green;
+		margin-bottom: 42px;
+		&.image
+			background-color: transparent;
+			position: relative;
+			object
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+
+.footer
+	background-color: $green
+	text-align: center;
+	padding: 58px 0 40px;
+	.social-links
+		margin-bottom: 20px;
+	p
+		color: $white
+		font-weight: 300
+		font-size: 18px
+		margin: 0
+		line-height: 1.3
+	.social-link
+		background-image: url('../img/social.png');
+		background-repeat: no-repeat;
+		display: inline-block;
+		transition: all .5s;
+		+ a
+			margin-left: 10px;
+		&:hover
+			transform: scale(1.1);
+	.facebook
+		width: 47px;
+		height: 47px;
+		background-position: -5px -5px;
+	.google-plus
+		width: 47px;
+		height: 48px;
+		background-position: -62px -5px;
+	.linkedin
+		width: 47px;
+		height: 48px;
+		background-position: -5px -63px;
+	.tumblr
+		width: 47px;
+		height: 47px;
+		background-position: -62px -63px;
+	.twitter
+		width: 47px;
+		height: 47px;
+		background-position: -119px -5px;
+
+	.pageup
+		display: block;
+		width: 25px;
+		height: 25px;
+		border-right: 5px solid #373737;
+		border-bottom: 	5px solid #373737;
+		transform: rotate(-135deg);
+		position: absolute;
+		right: 0;
+		top: 50%;
+		cursor: pointer;
